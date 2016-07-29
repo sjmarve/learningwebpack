@@ -29,7 +29,7 @@ const common = {
     },
     output: {
         path: PATHS.build,
-        publicPath: '/webpack-demo/',
+        publicPath: '/learningwebpack/',
         filename: '[name].js',
         chunkFilename: '[chunkhash].js'
 },

@@ -2,6 +2,10 @@
   "name": "webpack-config",
   "version": "1.0.0",
   "description": "webpack learning",
+  "repository" :  { 
+    "type" : "git",
+    "url" : "https://github.com/sjmarve/learningwebpack.git"
+  },
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
