@@ -15,7 +15,8 @@ const PATHS = {
     style: [
         path.join(__dirname, 'app', 'main.css'),
         path.join(__dirname, 'node_modules', 'purecss')
-    ]
+    ],
+    images: path.join(__dirname, 'app', 'images')
 };
 
 const packages = require('./package.json');
@@ -32,10 +33,38 @@ const common = {
         publicPath: '/learningwebpack/',
         filename: '[name].js',
         chunkFilename: '[chunkhash].js'
-},
+    },
+    module: {
+          preLoaders: [
+            {
+                test: /\.(js|jsx)/,
+                loaders: ['eslint'],
+                include: PATHS.app
+            }
+          ],
+          loaders: [
+            {
+                test: /\.less$/,
+                loaders: ['style', 'css', 'less'],
+                include: PATHS.style
+            },
+            {
+                test: /\.scss$/,
+                loaders: ['style', 'css', 'scss'],
+                include: PATHS.style
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loaders: [
+                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
+                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                ]
+            }
+          ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Webpack demo"
+            title: "Webpack Boiler Plate"
         })
         // new FaviconsWebpackPlugin('my-logo.png')
     ]

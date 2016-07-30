@@ -1,3 +1,6 @@
+/**
+ * This file containes portions for tasks/plugins/options that can be used int he main config file
+ */
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
